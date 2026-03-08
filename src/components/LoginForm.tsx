@@ -1,6 +1,6 @@
 import { useState } from "react";
 import  { useAuth } from "../contexts/AuthContext"
-import { loginRequest } from "../services/authService";
+import { loginRequest } from "../services/AuthService";
 import toast from "react-hot-toast";
 type Props = {
   onLoginSuccess: () => void;
@@ -17,8 +17,8 @@ export default function LoginForm({onLoginSuccess}: Props){
         try{
         const data = await loginRequest(username, password);
         login(data.token);
-         onLoginSuccess();
-         toast.success("Logged in Successfully");
+        onLoginSuccess();
+        toast.success("Logged in Successfully");
         }
         catch (err:any)
         {
