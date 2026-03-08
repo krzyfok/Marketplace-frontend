@@ -7,11 +7,17 @@ export default function LoginForm(){
 
     const [username, setUsername] = useState("");
     const [password,setPassword] = useState("");
-
+    const [error, setError] = useState("")
     const handleLogin = async ()=>
-    {
+    {   setError("");
+        try{
         const data = await loginRequest(username, password);
         login(data.token);
+        }
+        catch (err:any)
+        {
+            setError("ERROR");
+        }
     }
 
 
@@ -21,7 +27,9 @@ export default function LoginForm(){
           <h1 className="text-black text-center " >LOG IN</h1>
           <input type= "text" placeholder="username" onChange={(e)=>setUsername(e.target.value)} className=""></input>
           <input type= "text" placeholder="password" onChange={(e)=>setPassword(e.target.value)} className=""></input>
-          <button className="bg-black text-white p-2 rounded-2xl" onClick={handleLogin}> Sign in</button>
+          <button className="bg-black text-white px-10 py-3 rounded-2xl" onClick={handleLogin}> Sign in</button>
+
+          {error && <div className="bg-red-600 px-10 py-3 rounded-2xl text-white"> {error}</div>}
         </div>
     )
 }
