@@ -24,7 +24,7 @@ export default function RegisterForm(){
           <h1 className="text-black text-center " >REGISTER</h1>
           <input type= "text" placeholder="name" onChange={(e)=>setName(e.target.value)} className=""></input>
           <input type= "text" placeholder="surname" onChange={(e)=>setSurname(e.target.value)} className=""></input>
-          <input type= "text" placeholder="username" onChange={(e)=>setSurname(e.target.value)} className=""></input>
+          <input type= "text" placeholder="username" onChange={(e)=>setUsername(e.target.value)} className=""></input>
           <input type= "text" placeholder="password" onChange={(e)=>setPassword(e.target.value)} className=""></input>
           <input type= "text" placeholder="email" onChange={(e)=>setEmail(e.target.value)} className=""></input>
           <button className="bg-black text-white p-2 rounded-2xl" onClick={handleRegister}> Register</button>

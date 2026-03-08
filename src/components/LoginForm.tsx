@@ -1,8 +1,12 @@
 import { useState } from "react";
 import  { useAuth } from "../contexts/AuthContext"
 import { loginRequest } from "../services/authService";
+import toast from "react-hot-toast";
+type Props = {
+  onLoginSuccess: () => void;
+};
 
-export default function LoginForm(){
+export default function LoginForm({onLoginSuccess}: Props){
     const {login} =useAuth();
 
     const [username, setUsername] = useState("");
@@ -13,6 +17,8 @@ export default function LoginForm(){
         try{
         const data = await loginRequest(username, password);
         login(data.token);
+         onLoginSuccess();
+         toast.success("Logged in Successfully");
         }
         catch (err:any)
         {
@@ -24,6 +30,7 @@ export default function LoginForm(){
                 setError("ERROR");
             }
         }
+       
     }
 
 

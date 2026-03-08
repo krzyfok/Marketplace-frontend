@@ -39,7 +39,7 @@ export default function Home() {
 
       </main>
       {showLoginForm && (
-        <LoginForm/>
+        <LoginForm onLoginSuccess={()=>setShowLoginForm(false)}/>
 
       )}
       {showRegitserForm &&(
