@@ -1,9 +1,11 @@
 import Gallery from "../components/Gallery";
 import { useState } from "react";
 import LoginForm from "../components/LoginForm";
+import RegisterForm from "../components/RegisterForm";
 export default function Home() {
 
   const [showLoginForm, setShowLoginForm] = useState(false);
+  const [showRegitserForm, setShowRegiterForm] = useState(false);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -14,7 +16,7 @@ export default function Home() {
           </div> 
           <div className="flex gap-2">
             <button className="bg-black text-white hover:text-white px-5 text-black  px-10 text-3xl font-bold rounded-lg" onClick={() => setShowLoginForm(!showLoginForm)}>Log in</button>
-            <button className="bg-black text-white hover:text-white px-5 text-black px-10 text-3xl font-bold rounded-lg">Register</button>
+            <button className="bg-black text-white hover:text-white px-5 text-black px-10 text-3xl font-bold rounded-lg"  onClick={()=>setShowRegiterForm(!showRegitserForm)}>Register</button>
             </div>
       </div> 
       </header>
@@ -39,6 +41,9 @@ export default function Home() {
       {showLoginForm && (
         <LoginForm/>
 
+      )}
+      {showRegitserForm &&(
+        <RegisterForm/>
       )}
       <footer className="text-white mt-auto">
         <div className="bg-emerald-700 h-10 flex items-center justify-center">
