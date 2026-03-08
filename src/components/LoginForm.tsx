@@ -16,7 +16,13 @@ export default function LoginForm(){
         }
         catch (err:any)
         {
-            setError("ERROR");
+            if(err.response?.status == 401)
+            {
+                setError("Wrong password or username");
+            }
+            else{
+                setError("ERROR");
+            }
         }
     }
 
