@@ -1,5 +1,6 @@
 import Gallery from "../components/Gallery";
 import { useState } from "react";
+import LoginForm from "../components/LoginForm";
 export default function Home() {
 
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -36,11 +37,7 @@ export default function Home() {
 
       </main>
       {showLoginForm && (
-        <div className="absolute top-32 left-1/2 transform -translate-x-1/2 bg-white py-10 rounded-2xl shadow-xl w-full max-w-md  flex flex-col items-center justify-center gap-4">
-          <h1 className="text-black text-center " >LOG IN</h1>
-          <input type= "text" placeholder="username" className=""></input>
-          <input type= "text" placeholder="password" className=""></input>
-        </div>
+        <LoginForm/>
 
       )}
       <footer className="text-white mt-auto">
