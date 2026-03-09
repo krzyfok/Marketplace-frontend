@@ -5,7 +5,7 @@ import RegisterForm from "../components/RegisterForm";
 export default function Home() {
 
   const [showLoginForm, setShowLoginForm] = useState(false);
-  const [showRegitserForm, setShowRegiterForm] = useState(false);
+  const [showRegisterForm, setShowRegisterForm] = useState(false);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -15,8 +15,23 @@ export default function Home() {
             <h1 className=" text-5xl text-black font-bold px-5"> Marketplace</h1> 
           </div> 
           <div className="flex gap-2">
-            <button className="bg-black text-white hover:text-white px-5 text-black  px-10 text-3xl font-bold rounded-lg" onClick={() => setShowLoginForm(!showLoginForm)}>Log in</button>
-            <button className="bg-black text-white hover:text-white px-5 text-black px-10 text-3xl font-bold rounded-lg"  onClick={()=>setShowRegiterForm(!showRegitserForm)}>Register</button>
+            <button className="bg-black text-white hover:text-white px-5 text-black  px-10 text-3xl font-bold rounded-lg" 
+                onClick={() => {setShowLoginForm(!showLoginForm)
+                    if(showRegisterForm)
+                    {
+                        setShowRegisterForm(false);
+                    }
+                }}
+                >Log in</button>
+            <button className="bg-black text-white hover:text-white px-5 text-black px-10 text-3xl font-bold rounded-lg" 
+                 onClick={() => {setShowRegisterForm(!showRegisterForm)
+                    if(showLoginForm)
+                    {
+                        setShowLoginForm(false);
+                    }   
+
+                 }}
+                 >Register</button>
             </div>
       </div> 
       </header>
@@ -42,7 +57,7 @@ export default function Home() {
         <LoginForm onLoginSuccess={()=>setShowLoginForm(false)}/>
 
       )}
-      {showRegitserForm &&(
+      {showRegisterForm &&(
         <RegisterForm/>
       )}
       <footer className="text-white mt-auto">
