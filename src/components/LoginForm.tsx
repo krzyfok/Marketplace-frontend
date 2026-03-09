@@ -36,7 +36,7 @@ export default function LoginForm({onLoginSuccess}: Props){
 
     return(
 
-        <div className="absolute top-32 left-1/2 transform -translate-x-1/2 z-30 bg-white py-10 rounded-2xl shadow-xl w-full max-w-md  flex flex-col items-center justify-center gap-4">
+        <div className="absolute top-32 left-1/2 transform -translate-x-1/2 z-30 bg-white py-10 rounded-2xl shadow-xl w-full max-w-md  flex flex-col items-center justify-center gap-4 border-4 border-black">
           <h1 className="text-black text-center " >LOG IN</h1>
           <input type= "text" placeholder="username" onChange={(e)=>setUsername(e.target.value)} className=""></input>
           <input type= "text" placeholder="password" onChange={(e)=>setPassword(e.target.value)} className=""></input>
