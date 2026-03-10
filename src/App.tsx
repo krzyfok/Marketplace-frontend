@@ -12,8 +12,8 @@ export default function App() {
     <AuthProvider>
       <Router>
         <Toaster position="top-left" reverseOrder={false} />
-        <Navbar />
-         <AuthModal /> 
+        <Navbar/>
+        <AuthModal/> 
         <Routes>
           <Route path='/' element={<Home/>} />
         </Routes>

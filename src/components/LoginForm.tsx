@@ -2,9 +2,6 @@ import { useState } from "react";
 import  { useAuth } from "../contexts/AuthContext"
 import { loginRequest } from "../services/AuthService";
 import toast from "react-hot-toast";
-type Props = {
-  onLoginSuccess: () => void;
-};
 
 export default function LoginForm(){
     const {login} =useAuth();

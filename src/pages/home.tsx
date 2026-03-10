@@ -1,12 +1,5 @@
 import Gallery from "../components/Gallery";
-import { useState } from "react";
-import LoginForm from "../components/LoginForm";
-import RegisterForm from "../components/RegisterForm";
 export default function Home() {
-
-  const [showLoginForm, setShowLoginForm] = useState(false);
-  const [showRegisterForm, setShowRegisterForm] = useState(false);
-
   return (
     <div className="flex flex-col min-h-screen">
       
