@@ -6,7 +6,7 @@ type Props = {
   onLoginSuccess: () => void;
 };
 
-export default function LoginForm({onLoginSuccess}: Props){
+export default function LoginForm(){
     const {login} =useAuth();
 
     const [username, setUsername] = useState("");
@@ -16,8 +16,7 @@ export default function LoginForm({onLoginSuccess}: Props){
     {   setError("");
         try{
         const data = await loginRequest(username, password);
-        login(data.token);
-        onLoginSuccess();
+        login(data.token, data.username);
         toast.success("Logged in Successfully");
         }
         catch (err:any)

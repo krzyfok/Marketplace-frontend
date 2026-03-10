@@ -13,7 +13,7 @@ export default function RegisterForm(){
     const handleRegister = async ()=>
     {
         const data = await registerRequest(name, surname,email, username, password);
-        login(data.token);
+        login(data.token, data.username);
 
     }
 

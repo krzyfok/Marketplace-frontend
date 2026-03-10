@@ -9,32 +9,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-white text-white p-4 font-sans" >
-        <div className="flex flex-row justify-between" > 
-          <div className="bg-white py-3 border-2 border-rounded border-black rounded-lg">
-            <h1 className=" text-5xl text-black font-bold px-5"> Marketplace</h1> 
-          </div> 
-          <div className="flex gap-2">
-            <button className="bg-black text-white hover:text-white px-5 text-black  px-10 text-3xl font-bold rounded-lg" 
-                onClick={() => {setShowLoginForm(!showLoginForm)
-                    if(showRegisterForm)
-                    {
-                        setShowRegisterForm(false);
-                    }
-                }}
-                >Log in</button>
-            <button className="bg-black text-white hover:text-white px-5 text-black px-10 text-3xl font-bold rounded-lg" 
-                 onClick={() => {setShowRegisterForm(!showRegisterForm)
-                    if(showLoginForm)
-                    {
-                        setShowLoginForm(false);
-                    }   
-
-                 }}
-                 >Register</button>
-            </div>
-      </div> 
-      </header>
+      
       <main className="flex-1 mx-auto w-full px-40 py-10 bg-white">
         <section className="grid grid-cols-1 gap-20"> 
           <Gallery/>
@@ -53,13 +28,7 @@ export default function Home() {
 
 
       </main>
-      {showLoginForm && (
-        <LoginForm onLoginSuccess={()=>setShowLoginForm(false)}/>
-
-      )}
-      {showRegisterForm &&(
-        <RegisterForm/>
-      )}
+      
       <footer className="text-white mt-auto">
         <div className="bg-emerald-700 h-10 flex items-center justify-center">
           <a
