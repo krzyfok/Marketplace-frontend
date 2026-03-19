@@ -32,6 +32,7 @@ export const AuthProvider = ({children}:{children : ReactNode }) => {
 
         setToken(null);
         localStorage.removeItem('token');
+        setUsername(null);
     }
     const openLogin = () => setAuthView("login");
     const openRegister = () => setAuthView("register");

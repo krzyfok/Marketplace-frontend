@@ -33,10 +33,10 @@ export default function LoginForm(){
     return(
 
         <div className="absolute top-32 left-1/2 transform -translate-x-1/2 z-30 bg-white py-10 rounded-2xl shadow-xl w-full max-w-md flex flex-col items-center justify-center gap-4 border-4 border-black">
-          <div className="bg-white text-black px-10 py-3 rounded-2xl border-4 border-black font-bold" >LOG IN</div>
-          <input type= "text" placeholder="username" onChange={(e)=>setUsername(e.target.value)} className=""></input>
+
+          <input  type= "text" placeholder="username" onChange={(e)=>setUsername(e.target.value)} className=""></input>
           <input type= "text" placeholder="password" onChange={(e)=>setPassword(e.target.value)} className=""></input>
-          <button className="bg-black text-white px-10 py-3 rounded-2xl" onClick={handleLogin}> Sign in</button>
+          <button className="bg-black text-white px-10 py-3 rounded-2xl" onClick={handleLogin}> LOG IN</button>
 
           {error && <div className="bg-red-600 px-10 py-3 rounded-2xl text-white"> {error}</div>}
         </div>
