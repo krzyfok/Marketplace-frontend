@@ -1,5 +1,6 @@
 import  { createContext, useContext, useState} from 'react';
 import type { ReactNode } from "react";
+import toast from "react-hot-toast";
 
 type AuthView = "login" | "register" | null;
 
@@ -27,12 +28,14 @@ export const AuthProvider = ({children}:{children : ReactNode }) => {
         setUsername(username);
         localStorage.setItem('token', newToken);
         setAuthView(null);
+        toast.success("Logged in Successfully");
     }
     const logout = () =>{
 
         setToken(null);
         localStorage.removeItem('token');
         setUsername(null);
+        toast.success("Logged out Successfully");
     }
     const openLogin = () => setAuthView("login");
     const openRegister = () => setAuthView("register");

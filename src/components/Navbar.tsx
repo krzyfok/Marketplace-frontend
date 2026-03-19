@@ -48,20 +48,20 @@ export function Navbar() {
             </button>
 
             <div
-              className={`fixed top-0 right-0 h-full w-64 bg-gray-800 text-white z-50 flex flex-col p-5 shadow-2xl transition-transform duration-300 ease-in-out ${
+              className={`fixed top-0 right-0 h-full w-30 bg-gray-800 text-white z-50 flex flex-col p-5 shadow-2xl transition-transform duration-300 ease-in-out ${
                 isMenuOpen ? "translate-x-0" : "translate-x-full"
               }`}
             >
               <div className="flex justify-end mb-8">
                 <button
                   onClick={handleToggleMenu}
-                  className="text-white text-4xl font-bold hover:text-gray-400"
+                  className="text-white text-3xl font-bold hover:text-gray-400"
                 >
                   &times;
                 </button>
               </div>
               <button
-                className="bg-black text-white hover:text-white py-4 px-10 text-3xl font-bold rounded-lg"
+                className="bg-black text-white hover:text-white py-4 px-10 text-2xl font-bold rounded-lg"
                 onClick={handleLogutClick}
               >
                 Log Out

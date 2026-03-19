@@ -1,7 +1,7 @@
 import { useState } from "react";
 import  { useAuth } from "../contexts/AuthContext"
 import { loginRequest } from "../services/AuthService";
-import toast from "react-hot-toast";
+
 
 export default function LoginForm(){
     const {login} =useAuth();
@@ -14,7 +14,7 @@ export default function LoginForm(){
         try{
         const data = await loginRequest(username, password);
         login(data.token, data.username);
-        toast.success("Logged in Successfully");
+  
         }
         catch (err:any)
         {
