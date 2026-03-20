@@ -45,14 +45,14 @@ return(
         })}
         <button
         onClick={previous}
-        className="absolute left-10 bg-black/50 text-white px-4 py-2 rounded"
+        className="absolute left-10 bg-black/50 text-white px-4 py-2 rounded z-20"
       >
         <FiChevronLeft size={24} />
       </button>
 
       <button
         onClick={next}
-        className="absolute right-10 bg-black/50 text-white px-4 py-2 rounded"
+        className="absolute right-10 bg-black/50 text-white px-4 py-2 rounded z-20"
       >
          <FiChevronRight size={24} />
       </button>
