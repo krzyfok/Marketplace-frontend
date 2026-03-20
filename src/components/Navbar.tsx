@@ -33,7 +33,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="p-3 flex flex-row justify-between">
+    <nav className="p-3 flex flex-row justify-between bg-green-300">
       <div className="bg-white py-3 border-2 border-rounded border-black rounded-lg">
         <h1 className="text-5xl text-black font-bold px-5">Marketplace</h1>
       </div>
@@ -43,9 +43,9 @@ export function Navbar() {
           <>
             <button
               onClick={handleToggleMenu}
-              className="bg-black text-white hover:text-white py-4 px-10 text-3xl font-bold rounded-lg"
+              className="relative inline-flex bg-black text-white items-center justify-center  p-8 w-10 h-10 overflow-hidden bg-neutral-tertiary rounded-full text-3xl"
             >
-              {username}
+              {username[0].toUpperCase()}
             </button>
 
             <Transition appear show={isMenuOpen} as={Fragment}>
