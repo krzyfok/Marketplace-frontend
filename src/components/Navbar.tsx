@@ -1,5 +1,6 @@
 import { useAuth } from "../contexts/AuthContext";
-import { useState } from "react";
+import { useState, Fragment } from "react";
+import { Dialog, TransitionChild, Transition, DialogPanel } from "@headlessui/react";
 
 export function Navbar() {
   const { authView, openLogin, openRegister, closeAuth, username, logout } = useAuth();
@@ -47,26 +48,56 @@ export function Navbar() {
               {username}
             </button>
 
-            <div
-              className={`fixed top-0 right-0 h-full w-30 bg-gray-800 text-white z-50 flex flex-col p-5 shadow-2xl transition-transform duration-300 ease-in-out ${
-                isMenuOpen ? "translate-x-0" : "translate-x-full"
-              }`}
-            >
-              <div className="flex justify-end mb-8">
-                <button
-                  onClick={handleToggleMenu}
-                  className="text-white text-3xl font-bold hover:text-gray-400"
+            <Transition appear show={isMenuOpen} as={Fragment}>
+              <Dialog as="div" className="relative z-50" onClose={() => setIsMenuOpen(false)}>
+                
+                
+                <TransitionChild
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0"
+                  enterTo="opacity-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
                 >
-                  &times;
-                </button>
-              </div>
-              <button
-                className="bg-black text-white hover:text-white py-4 px-10 text-2xl font-bold rounded-lg"
-                onClick={handleLogutClick}
-              >
-                Log Out
-              </button>
-            </div>
+                  <div className="fixed inset-0 bg-black/50" />
+                </TransitionChild>
+
+                
+                <div className="fixed inset-0 flex justify-end">
+                  
+                  
+                  <TransitionChild
+                    as={Fragment}
+                    enter="transform transition ease-in-out duration-300"
+                    enterFrom="translate-x-full" 
+                    enterTo="translate-x-0"     
+                    leave="transform transition ease-in-out duration-300"
+                    leaveFrom="translate-x-0"
+                    leaveTo="translate-x-full"  
+                  >
+                    <DialogPanel className="w-80 bg-gray-800 text-white flex flex-col p-5 shadow-2xl h-full">
+                      <div className="flex justify-end mb-8">
+                        <button
+                          onClick={() => setIsMenuOpen(false)}
+                          className="text-white text-3xl font-bold hover:text-gray-400"
+                        >
+                          &times;
+                        </button>
+                      </div>
+                      
+                      <button
+                        className="bg-black text-white hover:text-white py-4 px-10 text-2xl font-bold rounded-lg"
+                        onClick={handleLogutClick}
+                      >
+                        Log Out
+                      </button>
+                    </DialogPanel>
+                  </TransitionChild>
+                </div>
+              </Dialog>
+            </Transition>
           </>
         ) : (
           <>
