@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { registerRequest } from "../services/AuthService";
-import { useAuth } from "../contexts/AuthContext";
+import { registerRequest } from "../../../services/AuthService";
+import { useAuth } from "../../../contexts/AuthContext";
 export default function RegisterForm(){
     
     const {login} = useAuth();

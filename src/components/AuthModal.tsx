@@ -1,6 +1,6 @@
 import  { useAuth } from "../contexts/AuthContext"
-import LoginForm  from './LoginForm';
-import RegisterForm  from './RegisterForm';
+import LoginForm  from '../pages/Home/components/LoginForm';
+import RegisterForm  from '../pages/Home/components/RegisterForm';
 
 
 export function AuthModal() {

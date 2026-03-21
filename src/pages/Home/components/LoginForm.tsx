@@ -1,6 +1,6 @@
 import { useState } from "react";
-import  { useAuth } from "../contexts/AuthContext"
-import { loginRequest } from "../services/AuthService";
+import  { useAuth } from "../../../contexts/AuthContext"
+import { loginRequest } from "../../../services/AuthService";
 
 
 export default function LoginForm(){
