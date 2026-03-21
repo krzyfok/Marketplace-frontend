@@ -1,4 +1,4 @@
-import { useAuth } from "../../../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 import { useState, Fragment } from "react";
 import { Dialog, TransitionChild, Transition, DialogPanel } from "@headlessui/react";
 
