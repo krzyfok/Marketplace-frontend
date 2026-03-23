@@ -102,13 +102,13 @@ export function Navbar() {
         ) : (
           <>
             <button
-              className="bg-black text-white hover:text-white px-5 py-4 text-3xl font-bold rounded-lg"
+              className="bg-black text-white hover:text-black hover:bg-white px-5 py-4 text-3xl font-bold rounded-lg transition-all duration-150 active:shadow-inner active:scale-95"
               onClick={handleLoginClick}
             >
               Log in
             </button>
             <button
-              className="bg-black text-white hover:text-white px-5 py-4 text-3xl font-bold rounded-lg"
+              className="bg-black text-white hover:text-black hover:bg-white  px-5 py-4 text-3xl font-bold rounded-lg transition-all duration-150 active:shadow-inner active:scale-95"
               onClick={handleRegisterClick}
             >
               Register
