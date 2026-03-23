@@ -43,7 +43,7 @@ export function Navbar() {
           <>
             <button
               onClick={handleToggleMenu}
-              className="relative inline-flex bg-black text-white items-center justify-center  p-8 w-10 h-10 overflow-hidden bg-neutral-tertiary rounded-full text-3xl"
+              className="relative inline-flex items-center justify-center p-8 w-10 h-10 rounded-full text-3xl text-white font-bold bg-black hover:text-black hover:bg-white transition duration-150 active:shadow-inner active:scale-95 "
             >
               {username[0].toUpperCase()}
             </button>
@@ -81,14 +81,14 @@ export function Navbar() {
                       <div className="flex justify-end mb-8">
                         <button
                           onClick={() => setIsMenuOpen(false)}
-                          className="text-white text-3xl font-bold hover:text-gray-400"
+                          className="bg-black text-white hover:text-black hover:bg-white  px-5 py-4 text-3xl font-bold rounded-lg transition duration-150 active:shadow-inner active:scale-95"
                         >
                           &times;
                         </button>
                       </div>
                       
                       <button
-                        className="bg-black text-white hover:text-white py-4 px-10 text-2xl font-bold rounded-lg"
+                        className="bg-black text-white hover:text-black hover:bg-white  px-5 py-4 text-3xl font-bold rounded-lg transition duration-150 active:shadow-inner active:scale-95"
                         onClick={handleLogutClick}
                       >
                         Log Out
@@ -102,13 +102,13 @@ export function Navbar() {
         ) : (
           <>
             <button
-              className="bg-black text-white hover:text-black hover:bg-white px-5 py-4 text-3xl font-bold rounded-lg transition-all duration-150 active:shadow-inner active:scale-95"
+              className="bg-black text-white hover:text-black hover:bg-white px-5 py-4 text-3xl font-bold rounded-lg transition duration-150 active:shadow-inner active:scale-95"
               onClick={handleLoginClick}
             >
               Log in
             </button>
             <button
-              className="bg-black text-white hover:text-black hover:bg-white  px-5 py-4 text-3xl font-bold rounded-lg transition-all duration-150 active:shadow-inner active:scale-95"
+              className="bg-black text-white hover:text-black hover:bg-white  px-5 py-4 text-3xl font-bold rounded-lg transition duration-150 active:shadow-inner active:scale-95"
               onClick={handleRegisterClick}
             >
               Register
