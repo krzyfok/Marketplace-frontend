@@ -31,18 +31,7 @@ export default function RegisterForm(){
 
      const isOpen = authView === "register";
 
-    // return(
-
-    //     <div className="absolute top-32 left-1/2 transform -translate-x-1/2 z-30 bg-white py-10 rounded-2xl shadow-xl w-full max-w-md  flex flex-col items-center justify-center gap-4  border-4 border-black">
-    //       <div className="bg-white text-black px-10 py-3 rounded-2xl border-4 border-black font-bold" >Register</div>
-    //       <input type= "text" placeholder="name" onChange={(e)=>setName(e.target.value)} className=""></input>
-    //       <input type= "text" placeholder="surname" onChange={(e)=>setSurname(e.target.value)} className=""></input>
-    //       <input type= "text" placeholder="username" onChange={(e)=>setUsername(e.target.value)} className=""></input>
-    //       <input type= "text" placeholder="password" onChange={(e)=>setPassword(e.target.value)} className=""></input>
-    //       <input type= "text" placeholder="email" onChange={(e)=>setEmail(e.target.value)} className=""></input>
-    //       <button className="bg-black text-white px-10 py-3 rounded-2xl" onClick={handleRegister}> Register</button>
-    //     </div>
-    // )
+ 
     return (
         <Transition appear show={isOpen} as={Fragment}>
           <Dialog as="div" className="relative z-50" onClose={closeAuth}>
@@ -132,7 +121,7 @@ export default function RegisterForm(){
                     />
                     <button 
                       type="submit" 
-                      className="bg-black text-white px-10 py-3 rounded-2xl hover:bg-gray-800 transition"
+                      className="bg-black text-white px-10 py-3 rounded-2xl hover:text-black hover:bg-white transition duration-150 active:shadow-inner active:scale-95 active:border-4  border-4 border-black"
                     >
                       REGISTER
                     </button>

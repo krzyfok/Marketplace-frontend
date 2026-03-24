@@ -95,7 +95,7 @@ export default function LoginForm(){
                 />
                 <button 
                   type="submit" 
-                  className="bg-black text-white px-10 py-3 rounded-2xl hover:bg-gray-800 transition"
+                   className="bg-black text-white px-10 py-3 rounded-2xl hover:text-black hover:bg-white transition duration-150 active:shadow-inner active:scale-95 active:border-4  border-4 border-black"
                 >
                   LOG IN
                 </button>
