@@ -1,12 +1,13 @@
 import { useAuth } from "../contexts/AuthContext";
 import { useState, Fragment } from "react";
 import { Dialog, TransitionChild, Transition, DialogPanel } from "@headlessui/react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export function Navbar() {
   const { authView, openLogin, openRegister, closeAuth, username, logout } = useAuth();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const navigate = useNavigate();
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -34,10 +35,18 @@ export function Navbar() {
 
   return (
     <nav className="p-3 flex flex-row justify-between bg-green-300">
-      <div className="bg-white py-3 border-2 border-rounded border-black rounded-lg">
-        <h1 className="text-5xl text-black font-bold px-5">Marketplace</h1>
-      </div>
-
+     <div className="flex gap-4">
+        <button className="text-3xl  text-black font-bold w-48 h-16 border-2  border-rounded rounded-lg  border-black transition duration-150 active:shadow-inner active:scale-95"
+         onClick={() => navigate("/")}
+        >Marketplace</button>
+      
+        <button className="bg-white w-48 h-16 border-2 border-rounded border-black rounded-lg text-lg text-black font-bold  transition duration-150 active:shadow-inner active:scale-95"
+        onClick={() => navigate("/catalog")}
+        >All Products
+        </button>
+     </div>
+      
+      
       <div className="flex gap-2 items-center">
         {username ? (
           <>

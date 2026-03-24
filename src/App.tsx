@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import { Navbar } from './components/Navbar';
 import {AuthModal} from './components/AuthModal'
 import { useAuth } from "./contexts/AuthContext";
+import CatalogPage from './pages/CatalogPage/CatalogPage';
 export default function App() {
 
   const { isLoading } = useAuth();
@@ -18,6 +19,7 @@ export default function App() {
         <AuthModal/> 
         <Routes>
           <Route path='/' element={<Home/>} />
+          <Route path="/catalog" element = {<CatalogPage/>}/>
         </Routes>
       </Router>
     
